@@ -1,0 +1,112 @@
+<div id="page">
+			<div class="pi-container">
+				<div class="pi-section-w pi-section-white">
+
+					<div class="pi-section">
+						<h4 class="pi-has-bg pi-weight-700 pi-uppercase pi-letter-spacing pi-margin-bottom-25">{{dateCurrent |  date: 'EEEE dd MMMM' }}</h4>
+						<div class="pi-row">
+							<form action="" role="form">
+								<div class="pi-col-sm-5">
+									<div class="form-group">
+										<select id="salle" class="form-control" name="salle" ng-model="idSalle">
+											<option ng-repeat="s in salles" value="{{s.idSalle}}">{{s.nom}}</option>
+							
+										</select>
+									</div>
+								</div>
+								<div class="pi-col-sm-5 pi-text-center">
+									<input type="text"  class="form-control" ng-click="open($event)" uib-datepicker-popup="dd/MM/yyyy"
+													ng-model="dateProjection" is-open="status.opened"
+													min-date="minDate" ng-required="true"
+													close-text="Close"/>
+								</div>
+								<div class="pi-col-sm-2 pi-text-center">
+									<a href="#" class="btn pi-btn-base pi-btn-small" ng-click="chargerProjections()">Filtrer</a>
+								</div>
+							</form>
+						</div>
+						<div ng-repeat="p in projections | orderBy:'creneau'">
+						<div class="pi-row" >
+							<div class="pi-col-sm-4" style="padding:5;">
+								<img src="http://placehold.it/400x600" alt="">
+							</div>
+							<div class="pi-col-sm-8">
+								<h4 class="pi-has-border pi-has-tall-border pi-has-base-border pi-uppercase" ng-if="p.creneau==1">
+								16h - 18h
+								</h4>
+								<h4 class="pi-has-border pi-has-tall-border pi-has-base-border pi-uppercase" ng-if="p.creneau==2">
+								18h - 20h
+								</h4>
+								<h4 class="pi-has-border pi-has-tall-border pi-has-base-border pi-uppercase" ng-if="p.creneau==3">
+								120h - 22h
+								</h4>
+								<h4 class="pi-has-border pi-has-tall-border pi-has-base-border pi-uppercase" ng-if="p.creneau==4">
+								22h - 00h
+								</h4>
+								<div class="pi-row">
+									<div class="pi-col-sm-4">
+										<p>
+											<strong>Titre</strong>
+										</p>
+										<br/>
+										<p>
+											<strong>Genre</strong>
+										</p>
+										<br/>
+										<p>
+											<strong>Année</strong>
+										</p>
+										<br/>
+										<p>
+											<strong>Producteur</strong>
+										</p>
+										<br/>
+										<p>
+											<strong>Acteurs</strong>
+										</p>
+										<br/>
+										<p>
+											<strong>Synopsis</strong>
+										</p>
+									</div>
+									<div class="pi-col-sm-8">
+										<p>
+											{{p.film.titre}}
+										</p>
+										<br/>
+										<p>
+											{{p.film.genre}}
+										</p>
+										<br/>
+										<p>
+											{{p.film.annee}}
+										</p>
+										<br/>
+										<p>
+											{{p.film.producteur}}
+										</p>
+										<br/>
+										<p>
+											<span ng-repeat="a in p.film.acteurs">{{a}}, </span>
+										</p>
+										<br/>
+										<p>
+											{{p.film.resume}}
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pi-row" ng-show="$root.isClient() && !isLate(p)">
+							<div class="pi-center">
+								<a href="#" class="btn pi-btn-base pi-btn-big pi-uppercase pi-weight-700 pi-letter-spacing" ng-click="reserver(p)">Réserver</a>
+							</div>
+						</div>
+						<hr class="pi-divider-gap-40" />
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,24 @@
+<div>
+	<table>
+	<thead>
+		<tr>
+			<th>ID Reservation</th>
+			<th>Date Reservation</th>
+			<th>Date Projection</th>
+			<th>ID Film</th>
+			<th>Titre Film</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="r in reservations">
+			<td>{{r.idReservation}}</td>
+			<td>{{r.dateReservation | date : "dd/MM/yyyy"}}</td>
+			<td>{{r.projection.date}}</td>
+			<td>{{r.projection.film.idFilm}}</td>
+			<td>{{r.projection.film.titre}}</td>
+			<td><button value="Annuler" ng-click="annulerReservation(r.idReservation)"></button></td>
+		</tr>
+	</tbody>
+	</table>
+</div>

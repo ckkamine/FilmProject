@@ -1,0 +1,47 @@
+<div id="page">
+			<div class="pi-container">
+				<div class="pi-section-w pi-section-white">
+					<div class="pi-section">
+						<h4 class="pi-has-bg pi-weight-700 pi-uppercase pi-letter-spacing pi-margin-bottom-25">Connexion</h4>
+						<form role="form">
+							<div class="pi-row pi-grid-small-margins">
+								<div class="pi-col-sm-4 pi-col-sm-offset-4">
+									<div class="form-group">
+										<label for="username">Nom d'utilisateur</label>
+										<div class="pi-input-with-icon">
+											<div class="pi-input-icon"><i class="icon-user"></i></div>
+											<input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur" ng-model="username">
+										</div>
+									</div>
+								</div>
+								<div class="pi-col-sm-4 pi-col-sm-offset-4">
+									<div class="form-group">
+										<label for="password">Mot de Passe</label>
+										<div class="pi-input-with-icon">
+											<div class="pi-input-icon"><i class="icon-lock"></i></div>
+											<input type="password" class="form-control" id="password" placeholder="Mot de Passe" ng-model="password">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pi-row">
+								<div class="pi-col-sm-12">
+									<p class="pi-center">
+										<button type="submit" ng-click="login()" class="btn pi-btn-base pi-btn-big pi-uppercase pi-weight-700 pi-letter-spacing"><i class="icon-check pi-icon-left"></i>Connexion</button>
+									</p>
+								</div>
+							</div>
+							<div class="pi-row">
+								<div class="pi-col-sm-12">
+									<p class="pi-center">
+										<a href="#">Mot de Passe oublié?</a>
+										{{date}}
+									</p>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
