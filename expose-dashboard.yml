@@ -13,3 +13,4 @@ spec:
       nodePort: 30020
   selector:
     k8s-app: kubernetes-dashboard
+    
