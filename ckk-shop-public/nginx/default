@@ -1,17 +1,4 @@
 server {
-    if ($host = portainer.oktoplace.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-  listen 80;
-  server_name portainer.oktoplace.com;
-  return 301 https://$server_name$request_uri;
-
-
-}
-
-server {
   listen 443 ssl;
   server_name example.com;
 
@@ -93,8 +80,11 @@ server {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-
     if ($host = oktoplace.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    
+    if ($host = portainer.oktoplace.com) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
