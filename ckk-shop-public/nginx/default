@@ -25,13 +25,13 @@ server {
 }
 
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+	listen 80;
+	listen [::]:80;
 
 	root /var/www/html;
 
 
-	server_name _;
+	server_name oktoplace.com;
 
 	location / {
 		# First attempt to serve request as file, then
