@@ -11,7 +11,7 @@ services:
     networks:
       - private
     ports:
-      - 9094:8080
+      - 127.0.0.1:9094:8080
     deploy:
       mode: global
       resources:
@@ -30,7 +30,7 @@ services:
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
     ports:
-      - 9100:9100
+      - 127.0.0.1:9100:9100
     environment:
       - HOST_HOSTNAME=/etc/host_hostname
     networks:
@@ -65,7 +65,7 @@ services:
     networks:
       - private
     ports:
-      - 9093:9093
+      - 127.0.0.1:9093:9093
     deploy:
       replicas: 1
       placement:
@@ -94,7 +94,7 @@ services:
     networks:
       - private
     ports:
-      - 9090:9090
+      - 127.0.0.1:9090:9090
     deploy:
       placement:
         constraints:
@@ -120,7 +120,7 @@ services:
     networks:
       - private
     ports:
-      - 3002:3000
+      - 127.0.0.1:3002:3000
     deploy:
       replicas: 1
       placement:
