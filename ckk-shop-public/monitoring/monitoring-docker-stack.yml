@@ -111,14 +111,6 @@ services:
     configs:
       - source: grafana_config_datasource
         target: /etc/grafana/provisioning/datasources/prometheus.yml
-      - source: grafana_dashboard_prometheus
-        target: /etc/grafana/provisioning/dashboards/ds_prometheus.yml
-      - source: grafana_dashboard_docker
-        target: /etc/grafana/provisioning/dashboards/DockerMonitoring.json
-      - source: grafana_dashboard_dockerprometheus
-        target: /etc/grafana/provisioning/dashboards/DockerPrometheusMonitoring.json
-      - source: grafana_dashboard_blackbox
-        target: /etc/grafana/provisioning/dashboards/BlackboxExporter.json
     environment:
       - GF_SERVER_ROOT_URL=http://localhost:3002
       - GF_SECURITY_ADMIN_USER=${GRAFANA_USER:-admin}
@@ -159,11 +151,3 @@ configs:
     file: /prometheus/rules/alert.rules
   grafana_config_datasource:
     file: /grafana/provisioning/datasources/prometheus.yml
-  grafana_dashboard_prometheus:
-    file: /grafana/provisioning/dashboards/ds_prometheus.yml
-  grafana_dashboard_docker:
-    file: /grafana/provisioning/dashboards/DockerMonitoring.json
-  grafana_dashboard_dockerprometheus:
-    file: /grafana/provisioning/dashboards/DockerPrometheusMonitoring.json
-  grafana_dashboard_blackbox:
-    file: /grafana/provisioning/dashboards/BlackboxExporter.json
