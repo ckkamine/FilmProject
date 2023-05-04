@@ -144,10 +144,10 @@ volumes:
 
 configs:
   alertmanager_config:
-    file: /alertmanager/configs/alertmanager.yml
+    file: ./alertmanager/configs/alertmanager.yml
   prometheus_config:
-    file: /prometheus/configs/prometheus.yml
+    file: ./prometheus/configs/prometheus.yml
   prometheus_rules:
-    file: /prometheus/rules/alert.rules
+    file: ./prometheus/rules/alert.rules
   grafana_config_datasource:
-    file: /grafana/provisioning/datasources/prometheus.yml
+    file: ./grafana/provisioning/datasources/prometheus.yml
