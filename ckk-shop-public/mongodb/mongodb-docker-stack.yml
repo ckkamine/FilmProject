@@ -11,7 +11,7 @@ services:
         limits:
           memory: 4096M
     volumes:
-      -/etc/mongodb/data:/data/db
+      - mongodb:/data/db
    #ports:
      # - 27017:27017
     networks:
@@ -37,3 +37,6 @@ networks:
   private:
     name: database
     driver: overlay
+
+volumes:
+  mongodb: {}
