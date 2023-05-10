@@ -34,7 +34,7 @@ services:
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongodb:27017/
       
 networks:
-  private:
+  database:
     name: database
     driver: overlay
 
