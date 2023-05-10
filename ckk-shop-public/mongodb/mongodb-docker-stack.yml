@@ -1,7 +1,8 @@
 version: '3.5'
 
 services:
-  mongo:
+  mongodb:
+    #image: mongodb/mongodb-community-server:6.0-ubi8
     image: mongo:latest
     restart: always
     deploy:
@@ -9,6 +10,10 @@ services:
       resources:
         limits:
           memory: 4096M
+    volumes:
+      -/etc/mongodb/data:/data/db
+   #ports:
+     # - 27017:27017
     networks:
       - database
     environment:
@@ -26,9 +31,11 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongodb:27017/
       
 networks:
   private:
     name: database
     driver: overlay
+volumes:
+  mongodb: {}
