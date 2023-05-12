@@ -22,4 +22,9 @@ services:
       resources:
         limits:
           memory: 1024M
+
+networks:
+  database:
+    external: true
+    name: database
      
