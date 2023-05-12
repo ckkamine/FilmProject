@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+  oktoplace-data:
+    image: oktoplace/oktoplace-data:latest
+    deploy:
+      mode: global
+      resources:
+        limits:
+          memory: 2048M
+    ports:
+      - 8080:8080
+    networks:
+      - database
+
+  oktoplace-admin:
+    image: oktoplace/oktoplace-admin:latest
+    ports:
+      - 3000:3000
+    deploy:
+      mode: global
+      resources:
+        limits:
+          memory: 1024M
+     
