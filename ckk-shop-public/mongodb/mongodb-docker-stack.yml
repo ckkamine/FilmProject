@@ -32,3 +32,8 @@ services:
 
 volumes:
   mongodb: {}
+  
+networks:
+  database:
+    external: true
+    name: database
