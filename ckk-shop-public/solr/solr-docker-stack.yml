@@ -22,6 +22,3 @@ networks:
   database:
     external: true
     name: database
-  host:
-    external: true
-    name: host
