@@ -8,7 +8,8 @@ services:
     volumes:
       - data:/var/solr
     command:
-      - solr-precreate products
+      - solr-precreate products      
+      - gettingstarted
     networks:
       - database
     deploy:
