@@ -1,26 +1,13 @@
 version: '3'
-
 services:
   solr:
-    image: solr:latest
+    image: solr
     ports:
-     - 8983:8983
+     - "8983:8983"
     volumes:
       - data:/var/solr
     command:
-      - solr-precreate products      
+      - solr-precreate
       - gettingstarted
-    #networks:
-     # - database
-    deploy:
-      mode: global
-      resources:
-        limits:
-          memory: 1024M
 volumes:
   data:
-          
-networks:
-  database:
-    external: true
-    name: database
